@@ -29,3 +29,8 @@ Route::get('/test-database', function () {
         die("No se pudo realizar la conexión a la base de datos... Error:" . $e);
     }
 });
+ 
+Route::get('/register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm');
+Route::post('/register', 'App\Http\Controllers\Auth\RegisterController@register');
+Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm');
+Route::post('/login', 'App\Http\Controllers\Auth\LoginController@login');
